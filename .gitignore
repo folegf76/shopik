@@ -1,0 +1,10 @@
+db.sqlite3
+.venv
+.venv/
+.idea
+.idea/
+*.log
+__pycache__/
+local_settings.py
+djangoKurs/__pycache__/
+djangoKurs/__pycache__
