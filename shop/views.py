@@ -1,8 +1,12 @@
 from django.shortcuts import get_object_or_404, render
 
 # from cart.cart import Cart
-from .models import Product
+from .models import Product, Category, Subcategory, Brand
 
+
+def shop(request):
+    categories = Category.objects.filter(is_visible=True)
+    return render(request, 'index.html')
 
 # def product_list(request, category_slug=None):
 #     cart = Cart(request)
