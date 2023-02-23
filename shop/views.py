@@ -8,6 +8,7 @@ def shop(request):
     categories = Category.objects.filter(is_visible=True)
     return render(request, 'index.html')
 
+
 # def product_list(request, category_slug=None):
 #     cart = Cart(request)
 #     products = Product.objects.filter(available=True)
