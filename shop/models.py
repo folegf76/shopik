@@ -35,7 +35,7 @@ class Brand(models.Model):
     is_visible = models.BooleanField(default=True)
 
     def __str__(self):
-        return f'{self.name}: {self.position}'
+        return f'{self.name}'
 
     class Meta:
         ordering = ('position', )

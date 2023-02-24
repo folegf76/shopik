@@ -7,7 +7,11 @@ from .models import Product, Category, Subcategory, Brand
 def shop(request):
     categories = Category.objects.filter(is_visible=True)
     sale_all = Product.objects.filter(on_sale=True)
-    return render(request, 'shop.html', context={'sale_all': sale_all})
+    products = Product.objects.filter(is_visible=True)
+    return render(request, 'shop.html', context={
+        'sale_all': sale_all,
+        'products': products,
+    })
 
 
 # def product_list(request, category_slug=None):
