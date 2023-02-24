@@ -1,0 +1,23 @@
+{% load static %}
+<!--slider area start-->
+<section class="slider_section slider_s_two">
+        <div class="slider_area owl-carousel">
+            {% for sale in sale_all %}
+                <div class="single_slider d-flex align-items-center" data-bgimg={{ sale.image.url }}>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="slider_content">
+                                    <span>Розпродаж </span>
+                                    <h1>Найкраще <br> <span>по ціні</span></h1>
+                                    <p>Discount 20% для всіх </p>
+                                    <a class="button" href="shop.html">{{ sale.name }} </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+</section>
+<!--slider area end-->
