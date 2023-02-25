@@ -71,3 +71,5 @@ class ProductsPhoto(models.Model):
     id_product = models.ForeignKey(Product, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
 
+
+
