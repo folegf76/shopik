@@ -24,6 +24,7 @@ urlpatterns = [
     path('logout/', logout_view, name='logout'),
     path('registration/', registration_view, name='registration'),
     path('admin/', admin.site.urls),
+    path('cart/', include('cart.urls', namespace='cart')),
     path('', include('shop.urls')),
 ]
 
