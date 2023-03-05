@@ -29,7 +29,8 @@ def product_detail(request, id, slug):
                    'subcategories': subcategories},
                   )
 
-def shop_full(request, id):
+
+def shop_full(request, id, id_cat):
     products = Product.objects.filter(is_visible=True, subcategory=id)
     categories = Category.objects.filter(is_visible=True)
     subcategories = Subcategory.objects.filter(is_visible=True)
@@ -39,3 +40,16 @@ def shop_full(request, id):
                    'categories': categories,
                    'subcategories': subcategories},
                   )
+
+
+def shop_category(request, id):
+    products = Product.objects.filter(is_visible=True, subcategory__category=id)
+    categories = Category.objects.filter(is_visible=True)
+    subcategories = Subcategory.objects.filter(is_visible=True)
+    return render(request,
+                  'shop-fullwidth.html',
+                  {'products': products,
+                   'categories': categories,
+                   'subcategories': subcategories},
+                  )
+

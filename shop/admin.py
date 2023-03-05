@@ -5,8 +5,8 @@ from .models import Category, Product, Subcategory, Brand, ProductsPhoto
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['name', 'slug', 'price', 'is_visible', 'created', 'updated', 'on_sale']
-    list_filter = ['is_visible', 'created', 'updated']
+    list_display = ['name', 'slug', 'price', 'is_visible', 'subcategory', 'on_sale']
+    list_filter = ['is_visible', 'subcategory', 'updated']
     list_editable = ['price', 'is_visible']
     prepopulated_fields = {'slug': ('name',)}
 
