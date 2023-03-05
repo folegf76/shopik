@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.http import require_GET
 
-from shop.models import Product
+from shop.models import Product, Category, Subcategory
 
 from .cart import Cart
 
@@ -20,4 +20,6 @@ def cart_remove(request, product_id):
 
 def cart_detail(request):
     cart = Cart(request)
-    return render(request, 'cart.html', {'cart': cart})
+    categories = Category.objects.filter(is_visible=True)
+    subcategories = Subcategory.objects.filter(is_visible=True)
+    return render(request, 'cart.html', {'cart': cart, 'categories': categories, 'subcategories': subcategories})

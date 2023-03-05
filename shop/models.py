@@ -27,6 +27,9 @@ class Subcategory(models.Model):
     class Meta:
         ordering = ('position', )
 
+    def get_absolute_url(self):
+        return reverse("shop:shop_full", args=[self.id])
+
 
 class Brand(models.Model):
     name = models.CharField(max_length=50, unique=True)
