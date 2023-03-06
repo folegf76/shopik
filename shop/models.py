@@ -77,5 +77,10 @@ class ProductsPhoto(models.Model):
     id_product = models.ForeignKey(Product, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='products/%Y/%m/%d', blank=True)
 
+    class Meta:
+        ordering = ('id_product', )
+
+    def __str__(self):
+        return f'{self.id_product}  {self.image}'
 
 

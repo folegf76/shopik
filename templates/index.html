@@ -69,16 +69,10 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li><a href="blog.html">blog<i class="fa fa-angle-down"></i></a>
+                                        <li><a href="{% url "blog:blog" %}">Блог</a></li>
+                                        <li><a>Корисно <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub_menu pages">
-                                                <li><a href="blog-details.html">blog details</a></li>
-                                                <li><a href="blog-fullwidth.html">blog fullwidth</a></li>
-                                                <li><a href="blog-sidebar.html">blog sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">pages <i class="fa fa-angle-down"></i></a>
-                                            <ul class="sub_menu pages">
-                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="{% url "about:about" %}">Про Нас</a></li>
                                                 <li><a href="services.html">services</a></li>
                                                 <li><a href="faq.html">Frequently Questions</a></li>
                                                 <li><a href="contact.html">contact</a></li>
