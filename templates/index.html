@@ -73,14 +73,10 @@
                                         <li><a>Корисно <i class="fa fa-angle-down"></i></a>
                                             <ul class="sub_menu pages">
                                                 <li><a href="{% url "about:about" %}">Про Нас</a></li>
-                                                <li><a href="services.html">services</a></li>
-                                                <li><a href="faq.html">Frequently Questions</a></li>
-                                                <li><a href="contact.html">contact</a></li>
-                                                <li><a href="login.html">login</a></li>
-                                                <li><a href="404.html">Error 404</a></li>
+                                                <li><a href="{% url "about:services" %}">Сервіс</a></li>
+                                                <li><a href="{% url "about:faq" %}">Часті запитання</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="contact.html"> Contact Us</a></li>
                                     </ul>
                                 </nav>
                             </div>

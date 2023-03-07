@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from shop.models import Category, Subcategory
-from .models import OurPluses, CustomersSays, WhatCan, AboutGallery
+from .models import OurPluses, CustomersSays, WhatCan, AboutGallery, ImgServices, PriceServices, Faq
 # Create your views here.
 
 
@@ -20,3 +20,30 @@ def about_views(request):
                    'categories': categories,
                    'subcategories': subcategories},
                   )
+
+
+def services_views(request):
+    img_s = ImgServices.objects.filter(is_visible=True)
+    prices = PriceServices.objects.filter(is_visible=True)
+    categories = Category.objects.filter(is_visible=True)
+    subcategories = Subcategory.objects.filter(is_visible=True)
+
+    return render(request, 'services.html',
+                  {'img_s': img_s,
+                   'prices': prices,
+                   'categories': categories,
+                   'subcategories': subcategories},
+                 )
+
+def faq_views(request):
+    faq_s = Faq.objects.filter(is_visible=True)
+    categories = Category.objects.filter(is_visible=True)
+    subcategories = Subcategory.objects.filter(is_visible=True)
+
+    return render(request, 'faq.html',
+                  {'faq_s': faq_s,
+                   'categories': categories,
+                   'subcategories': subcategories},
+                 )
+
+

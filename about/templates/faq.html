@@ -1,0 +1,74 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block site_content %}
+
+<!--faq area start-->
+<div class="faq_content_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="faq_content_wrapper">
+                    <h4>Нижче наведено поширені запитання, на які ви можете знайти відповідь самостійно</h4>
+                    <p>Клієнт дуже важливий, за клієнтом піде клієнт. До того були стріли, горла
+                        страх страху, eleifend turpis Мауріс завжди рекламував це фанатам
+                        нерухомість Але пропаганди немає. Бо йому потрібен діам. Поки вагітність не закінчилася, салат і дріжджі
+                        важливо мати регулярний графік. Немає такого поняття, як хороше домашнє завдання. На жаль, іноді зараз
+                        чистий, який є життям </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Accordion area-->
+<div class="accordion_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div id="accordion" class="card__accordion">
+                    {% for faq in faq_s %}
+                        {% if forloop.first %}
+                            <div class="card card_dipult">
+                                <div class="card-header card_accor" id="heading{{ faq.id }}">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{ faq.id }}"
+                                        aria-expanded="true" aria-controls="collapse{{ faq.id }}">
+                                        {{ faq.question }}
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                </div>
+                                <div id="collapse{{ faq.id }}" class="collapse show" aria-labelledby="heading{{ faq.id }}"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>{{ faq.answer }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="card  card_dipult">
+                                <div class="card-header card_accor" id="heading{{ faq.id }}">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse{{ faq.id }}"
+                                        aria-expanded="false" aria-controls="collapse{{ faq.id }}">
+                                        {{ faq.question }}
+                                        <i class="fa fa-plus"></i>
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                </div>
+                                <div id="collapse{{ faq.id }}" class="collapse" aria-labelledby="heading{{ faq.id }}"
+                                    data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p>{{ faq.answer }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Accordion area end-->
+<!--faq area end-->
+
+{% endblock %}

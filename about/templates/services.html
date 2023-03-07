@@ -1,0 +1,187 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block site_content %}
+
+<!--services img area-->
+<div class="services_gallery mt-100">
+    <div class="container">
+        <div class="row">
+            {% for img in img_s %}
+                <div class="col-lg-4 col-md-6">
+                <div class="single_services">
+                    <div class="services_thumb">
+                        <img src={{ img.image.url }} alt="">
+                    </div>
+                    <div class="services_content">
+                        <h3>{{ img.name }}</h3>
+                        <p>{{ img.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!--services img end-->
+
+<!--our services area-->
+<div class="our_services">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="services_title">
+                    <h2>НАШ СЕРВІС</h2>
+                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
+                        illum dolore
+                        eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit..
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="services_item">
+                    <div class="services_icone">
+                        <i class="fa fa-sliders" aria-hidden="true"></i>
+                    </div>
+                    <div class="services_desc">
+                        <h3>БРЕНДИНГ</h3>
+                        <p>Тут можна написати все що за хочеться і що потрібно клієнту!!! </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="services_item">
+                    <div class="services_icone">
+                        <i class="fa fa-umbrella"></i>
+                    </div>
+                    <div class="services_desc">
+                        <h3>ВЕБ ДИЗАЙН</h3>
+                        <p>Тут можна написати все що за хочеться і що потрібно клієнту!!! </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="services_item">
+                    <div class="services_icone">
+                        <i class="fa fa-camera"></i>
+                    </div>
+                    <div class="services_desc">
+                        <h3>ФОТОГРАФІЯ</h3>
+                        <p>Тут можна написати все що за хочеться і що потрібно клієнту!!! </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="services_item">
+                    <div class="services_icone">
+                        <i class="fa fa-cog"></i>
+                    </div>
+                    <div class="services_desc">
+                        <h3>ВЕБ-РОЗРОБКА</h3>
+                        <p>Тут можна написати все що за хочеться і що потрібно клієнту!!! </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="services_item">
+                    <div class="services_icone">
+                        <i class="fa fa-file-code-o" aria-hidden="true"></i>
+                    </div>
+                    <div class="services_desc">
+                        <h3>КОДУВАННЯ</h3>
+                        <p>Тут можна написати все що за хочеться і що потрібно клієнту!!! </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="services_item">
+                    <div class="services_icone">
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                    </div>
+                    <div class="services_desc">
+                        <h3>МАРКЕТИНГ</h3>
+                        <p>Тут можна написати все що за хочеться і що потрібно клієнту!!! </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="services_item">
+                    <div class="services_icone">
+                        <i class="fa fa-headphones"></i>
+                    </div>
+                    <div class="services_desc">
+                        <h3>ПІДТРИМКА</h3>
+                        <p>Тут можна написати все що за хочеться і що потрібно клієнту!!! </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="services_item">
+                    <div class="services_icone">
+                        <i class="fa fa-leaf"></i>
+                    </div>
+                    <div class="services_desc">
+                        <h3>ГРАФІЧНИЙ ДИЗАЙН</h3>
+                        <p>Тут можна написати все що за хочеться і що потрібно клієнту!!! </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--our services area end-->
+
+
+<!--services section area-->
+<div class="unlimited_services">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="services_section_thumb">
+                    <img src={% static "assets/img/service/services4.jpg" %} alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="unlimited_services_content">
+                    <h1>НЕОБМЕЖЕНІ ІДЕЇ</h1>
+                    <p>Вчені з Університету Сіднея (Австралія) створили модель геологічних змін Землі за 100 мільйонів
+                        років. Для цього вони використовували дані про геодинаміку, тектонічні та кліматичні сили з
+                        поверхневими процесами та іншу інформацію про погоду. Результати дослідження було опубліковано
+                        у журналі Science. </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--services section end-->
+
+<!--price table area -->
+<div class="priceing_table">
+    <div class="container">
+        <div class="row">
+            {% for price in prices %}
+                <div class="col-lg-3 col-md-6">
+                <div class="single_priceing">
+                    <div class="priceing_title">
+                        <h1>{{ price.name }}</h1>
+                    </div>
+                    <div class="priceing_list">
+                        <h1><span>{{ price.price }}</span>/Місяць</h1>
+                        <ul>
+                            <li>{{ price.description }}</li>
+                            <li>{{ price.description2 }}</li>
+                            <li>{{ price.description3 }}</li>
+                            <li>{{ price.description4 }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!--price table  end-->
+
+{% endblock %}
