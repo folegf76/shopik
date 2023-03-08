@@ -27,6 +27,7 @@ urlpatterns = [
     path('registration/', registration_view, name='registration'),
     path('admin/', admin.site.urls),
     path('cart/', include('cart.urls', namespace='cart')),
+    path('wishlist/', include('wishlist.urls', namespace='wishlist')),
     path('', include('shop.urls')),
 ]
 
