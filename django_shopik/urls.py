@@ -19,12 +19,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from account.views import login_view, logout_view, registration_view
 
+
 urlpatterns = [
     path('blog/', include('blog.urls')),
     path('about/', include('about.urls')),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('registration/', registration_view, name='registration'),
+    path('orders/', include('orders.urls', namespace='orders')),
     path('admin/', admin.site.urls),
     path('cart/', include('cart.urls', namespace='cart')),
     path('wishlist/', include('wishlist.urls', namespace='wishlist')),

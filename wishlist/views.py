@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.http import require_GET
-
+from cart.cart import Cart
 from shop.models import Product, Category, Subcategory
 
 from .wish import Wish
@@ -20,7 +20,8 @@ def wish_remove(request, product_id):
 
 def wish_detail(request):
     wish = Wish(request)
+    cart = Cart(request)
     categories = Category.objects.filter(is_visible=True)
     subcategories = Subcategory.objects.filter(is_visible=True)
-    return render(request, 'wishlist.html', {'wish': wish, 'categories': categories, 'subcategories': subcategories})
+    return render(request, 'wishlist.html', {'wish': wish, 'categories': categories, 'cart': cart, 'subcategories': subcategories})
 

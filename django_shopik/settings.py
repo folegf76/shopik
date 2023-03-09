@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'blog.apps.BlogConfig',
     'wishlist.apps.WishlistConfig',
+    'orders.apps.OrdersConfig',
     'about.apps.AboutConfig',
 ]
 

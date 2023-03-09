@@ -77,6 +77,8 @@
                                                 <li><a href="{% url "about:faq" %}">Часті запитання</a></li>
                                             </ul>
                                         </li>
+                                        <li><a href="{% url "wishlist:wish_detail" %}">Вас зацікавили</a></li>
+                                        <li><a href="{% url "cart:cart_detail" %}">Ваша корзина</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -103,16 +105,18 @@
                                         <ul class="dropdown_links">
                                             <li><a href="checkout.html">Checkout </a></li>
                                             <li><a href="my-account.html">My Account </a></li>
-                                            <li><a href="cart.html">Shopping Cart</a></li>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
+                                            <li><a href="{% url "cart:cart_detail" %}">Ваша корзина</a></li>
+                                            <li><a href="{% url "wishlist:wish_detail" %}">Вас зацікавили</a></li>
                                         </ul>
                                     </div>
                                     <div class="header_account-list header_wishlist">
-                                        <a href="wishlist.html"><i class="icon-heart"></i></a>
+                                        <a href="{% url "wishlist:wish_detail" %}"><i class="icon-heart"></i></a>
                                     </div>
                                     <div class="header_account-list  mini_cart_wrapper">
-                                        <a href="javascript:void(0)"><i class="icon-shopping-bag"></i><span
-                                                class="item_count">2</span></a>
+                                        {% with total_items=cart|length %}
+                                            <a href="{% url "cart:cart_detail" %}"><i class="icon-shopping-bag"></i><span
+                                                    class="item_count">{{ total_items }}</span></a>
+                                        {% endwith %}
                                         <!--mini cart-->
                                         <div class="mini_cart">
                                             <div class="cart_gallery">
@@ -247,11 +251,11 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-4 col-sm-6">
                         <div class="widgets_container contact_us">
-                            <h3>Opening Time</h3>
-                            <p><span>Mon - Fri:</span> 8AM - 10PM</p>
-                            <p><span>Sat:</span> 9AM-8PM</p>
-                            <p><span>Suns:</span> 14hPM-18hPM</p>
-                            <p><b>We Work All The Holidays</b></p>
+                            <h3>Час роботи</h3>
+                            <p><span>ПОН - ПТН:</span> 8:00 - 19:00</p>
+                            <p><span>СУБ:</span> 9:00-15:00</p>
+                            <p><span>НЕД:</span> 9:00-13:00</p>
+                            <p><b>Працюємо без вихідних</b></p>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-6">
@@ -259,11 +263,11 @@
                             <h3>Information</h3>
                             <div class="footer_menu">
                                 <ul>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="{% url "about:about" %}">Про Нас</a></li>
+                                    <li><a href="{% url "about:services" %}">Сервіс</a></li>
                                     <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="faq.html">Frequently Questions</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
+                                    <li><a href="{% url "about:faq" %}">Часті запитання</a></li>
+                                    <li><a href="{% url "wishlist:wish_detail" %}">Вас зацікавили</a></li>
                                 </ul>
                             </div>
                         </div>
