@@ -4,6 +4,7 @@ from .models import Product, Category, Subcategory, Brand
 from about.models import CustomersSays
 
 
+
 def shop(request):
     cart = Cart(request)
     customers_saya = CustomersSays.objects.filter(is_visible=True)
@@ -62,4 +63,25 @@ def shop_category(request, id):
                    'cart': cart,
                    'subcategories': subcategories},
                   )
+
+
+def shop_search(request, sear):
+    product_all = Product.objects.filter(is_visible=True)
+    products = []
+    sear = sear.lower()
+    for produсt in product_all:
+        prod = produсt.name.lower()
+        if prod.find(sear) != -1:
+            products.append(produсt)
+    categories = Category.objects.filter(is_visible=True)
+    subcategories = Subcategory.objects.filter(is_visible=True)
+    cart = Cart(request)
+    return render(request,
+                  'shop-fullwidth.html',
+                  {'products': products,
+                   'categories': categories,
+                   'cart': cart,
+                   'subcategories': subcategories},
+                  )
+
 

@@ -55,7 +55,7 @@
                                                         class="icon-shopping-bag"></i></a></li>
                                             <li class="compare"><a href="#" title="Add to Compare"><i
                                                         class="icon-sliders"></i></a></li>
-                                            <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i
+                                            <li class="wishlist"><a href="{% url "wishlist:wish_add" product.id %}" title="Add to Wishlist"><i
                                                         class="icon-heart"></i></a></li>
                                             <li class="quick_button"><a href="#" data-toggle="modal"
                                                     data-target="#modal_box" title="quick view"> <i
@@ -91,7 +91,7 @@
                                         <ul>
                                             <li class="add_to_cart"><a href="{% url "cart:cart_add" product.id %}" title="Add to cart">Add to
                                                     cart</a></li>
-                                            <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><i
+                                            <li class="wishlist"><a href="{% url "wishlist:wish_add" product.id %}" title="Add to Wishlist"><i
                                                         class="icon-heart"></i></a></li>
                                             <li class="compare"><a href="#" title="Add to Compare"><i
                                                         class="icon-sliders"></i></a></li>

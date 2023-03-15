@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from account.views import login_view, logout_view, registration_view
-
+from shop.views import shop_search
 
 urlpatterns = [
     path('blog/', include('blog.urls')),
@@ -31,6 +31,8 @@ urlpatterns = [
     path('cart/', include('cart.urls', namespace='cart')),
     path('wishlist/', include('wishlist.urls', namespace='wishlist')),
     path('', include('shop.urls')),
+    path('search/<str:sear>/', shop_search, name='shop_search'),
+
 ]
 
 if settings.DEBUG:
