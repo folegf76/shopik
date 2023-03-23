@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from cart.cart import Cart
 from .models import Product, Category, Subcategory, Brand
 from about.models import CustomersSays
+from .forms import Search
 
 
 
@@ -66,6 +67,8 @@ def shop_category(request, id):
 
 
 def shop_search(request, sear):
+    form = Search(request.POST or None)
+    # sear1 = form.sear
     product_all = Product.objects.filter(is_visible=True)
     products = []
     sear = sear.lower()
