@@ -6,5 +6,5 @@ User = get_user_model()
 
 
 class Search(forms.Form):
-    sear = forms.CharField(widget=forms.TextInput(attrs={'type': "text", 'placeholder': "Search product..."}))
+    sear = forms.CharField(widget=forms.TextInput(attrs={'type': "text", 'placeholder': "Search product."}))
 
